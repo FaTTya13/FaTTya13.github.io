@@ -1,0 +1,650 @@
+@import "reset";
+@import "mixin";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+$breakpoints: (
+  mobile: 321,
+  tablet: 481,
+  desktop: 769,
+  large: 1200,
+) !default;
+
+// Colors
+$color-main: #cfcfcf;
+$color-green: #00b285;
+$color-white: #fff;
+$color-lightorange: #cec7a6;
+$color-orange: #ffc165;
+$color-lightgrey: #c9c9c9;
+$color-darkgrey: #ababab;
+$bg-color: #1e1e1e;
+//
+
+body {
+  color: $color-main;
+  background-color: $bg-color;
+
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  @include flexbox($display: flex, $placeContent: space-between);
+  @include for-desktop {
+    max-width: 1100px;
+  }
+  @include for-tablet {
+    max-width: 769px;
+  }
+  @include for-phone-only {
+    @include flexbox($display: flex, $direction: column);
+    width: 380px;
+  }
+}
+
+.header {
+  &__container {
+    margin: 50px auto 80px;
+
+    @include for-phone-only {
+      margin: 20px 0;
+    }
+  }
+
+  &__description {
+    @include flexbox($direction: column, $justifyContent: space-between);
+
+    max-width: 500px;
+  }
+
+  &__image {
+    padding: 0 40px;
+    background: linear-gradient(
+      361.76deg,
+      #00b285 19%,
+      rgba(0, 178, 133, 0) 59%
+    );
+    border-radius: 10px;
+
+    @include for-tablet {
+      height: 100%;
+      padding: 0 20px;
+    }
+
+    @include for-phone-only {
+      padding: 0 5px;
+      align-self: center;
+      width: 365px;
+    }
+  }
+}
+
+.description {
+  span {
+    @include font($weight: 500, $size: 16px);
+
+    width: 330px;
+    padding: 8px 16px;
+    margin-bottom: 45px;
+
+    text-align: center;
+    line-height: 14px;
+
+    background: #363636;
+    border-radius: 3px;
+
+    color: $color-orange;
+
+    @include for-phone-only {
+      @include font($weight: 500, $size: 14px);
+    }
+  }
+
+  h1 {
+    @include font($weight: 600, $size: 42px);
+    line-height: 52px;
+
+    color: $color-green;
+
+    @include for-tablet {
+      @include font($weight: 600, $size: 31px);
+      line-height: 24px;
+    }
+
+    @include for-phone-only {
+      @include font($weight: 600, $size: 31px);
+      line-height: 28px;
+    }
+  }
+
+  p {
+    @include font($weight: 600, $size: 36px);
+    line-height: 42px;
+
+    color: $color-lightgrey;
+
+    @include for-tablet {
+      @include font($weight: 600, $size: 25px);
+      line-height: 27px;
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+
+    color: $color-white;
+    background-color: $color-green;
+
+    @include for-tablet {
+      margin-top: 25px;
+    }
+
+    @include for-phone-only {
+      margin: 20px;
+    }
+  }
+}
+
+// Global styles for button
+button {
+  @include font($weight: 700, $size: 16px);
+
+  width: 240px;
+  padding: 8px;
+
+  line-height: 32px;
+
+  border-radius: 3px;
+
+  @include for-tablet {
+    @include font($weight: 700, $size: 16px);
+
+    width: 210px;
+    padding: 8px;
+  }
+}
+//
+
+.main {
+  &__container {
+    margin: 0 auto;
+  }
+}
+
+.content__description {
+  @include font($weight: 600, $size: 32px);
+  line-height: 42px;
+
+  color: $color-green;
+
+  @include for-tablet {
+    @include font($weight: 600, $size: 22px);
+    line-height: 18px;
+  }
+}
+
+.content__list {
+  @include flexbox(
+    $display: flex,
+    $direction: column,
+    $justifyContent: space-between
+  );
+}
+
+.list {
+  &__item {
+    max-width: 720px;
+    margin: 24px 0;
+
+    .points__list {
+      margin-bottom: 10px;
+
+      &:last-of-type {
+        margin-top: 10px;
+      }
+
+      .points__item {
+        @include font($weight: 700, $size: 16px);
+        line-height: 24px;
+
+        color: $color-green;
+
+        span {
+          color: $color-orange;
+        }
+
+        &--darkgrey {
+          font-weight: 400;
+          font-style: normal;
+          color: $color-darkgrey;
+
+          & > span {
+            font-weight: 700;
+            color: $color-green;
+          }
+        }
+
+        @include for-tablet {
+          @include font($weight: 700, $size: 12px);
+          line-height: 16px;
+        }
+      }
+    }
+
+    @include for-tablet {
+      max-width: 320px;
+      margin: 12px 0;
+    }
+  }
+}
+
+.item {
+  &__header {
+    @include font($weight: 600, $size: 24px);
+    line-height: 32px;
+
+    color: $color-lightorange;
+
+    @include for-tablet {
+      @include font($weight: 600, $size: 18px);
+      line-height: 14px;
+    }
+  }
+
+  &__content {
+    @include font($weight: 400, $size: 16px);
+    max-width: 720px;
+    line-height: 24px;
+
+    margin-top: 10px;
+
+    color: $color-lightgrey;
+
+    &--darkgrey {
+      font-style: italic;
+      color: $color-darkgrey;
+    }
+
+    @include for-tablet {
+      @include font($weight: 400, $size: 12px);
+      line-height: 16px;
+    }
+  }
+}
+
+.aside {
+  @include flexbox(
+    $display: flex,
+    $direction: column,
+    $justifyContent: space-between,
+    $alignItems: flex-end
+  );
+  width: 340px;
+  height: 400px;
+
+  &__timestampInfo {
+    @include font($weight: 700, $size: 18px);
+    line-height: 28px;
+
+    padding: 10px 25px;
+    border-radius: 5px;
+
+    color: $color-white;
+    background-color: #363636;
+
+    > p:not(:first-child) {
+      font-weight: 400;
+      color: $color-lightorange;
+    }
+
+    @include for-tablet {
+      @include font($weight: 700, $size: 15px);
+      line-height: 20px;
+
+      padding: 10px 25px;
+    }
+  }
+
+  &__locationInfo {
+    @include flexbox(
+      $display: flex,
+      $direction: column,
+      $justifyContent: flex-end
+    );
+    background: url(/assets/customs-map.png);
+    width: 340px;
+    height: 194px;
+
+    padding: 14px 20px;
+
+    p {
+      @include font($weight: 600, $size: 24px);
+      line-height: 32px;
+
+      color: $color-lightorange;
+    }
+
+    span {
+      @include font($weight: 700, $size: 16px);
+      line-height: 20px;
+
+      color: $color-white;
+    }
+
+    @include for-tablet {
+      width: 290px;
+      height: 194px;
+    }
+  }
+
+  &__button {
+    @extend .description__button;
+
+    margin: 0;
+    color: $color-green;
+    background-color: $bg-color;
+    border: 1px solid $color-green;
+  }
+
+  @include for-tablet {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+.extraPrices {
+  margin: 20px 0 0 0;
+  padding: 14px 30px 14px 20px;
+  background-color: #363636;
+
+  cursor: pointer;
+
+  &__title {
+    @include font($weight: 400, $size: 20px);
+
+    line-height: 24px;
+    color: $color-lightorange;
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    @include for-phone-only {
+      @include font($weight: 400, $size: 16px);
+
+      line-height: 24px;
+    }
+  }
+
+  &__content {
+    @include font($weight: 400, $size: 20px);
+    display: none;
+
+    line-height: 24px;
+    color: $color-lightorange;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  @include for-tablet {
+    margin: 30px 0 0 0;
+    padding: 14px 30px 14px 20px;
+  }
+
+  @include for-phone-only {
+    margin: 10px 0 0 0;
+    padding: 14px 20px;
+  }
+}
+
+.content {
+  margin: 10px;
+  border: 1px solid #008080;
+
+  &__title {
+    padding: 5px;
+    margin: 10px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-green;
+      transform: scale(1.01);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    padding: 10px;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.footer {
+  &__container {
+    @include flexbox($display: flex, $direction: column);
+    margin: 0 auto 50px;
+
+    @include for-phone-only {
+      @include flexbox($display: flex, $direction: column);
+      width: 350px;
+      margin: 20px;
+    }
+  }
+}
+
+.winners__list {
+  @include flexbox($display: flex, $justifyContent: space-between);
+
+  margin: 10px 0 0;
+
+  .winners__place {
+    @include flexbox($display: flex, $placeItems: center);
+
+    width: 255px;
+    height: 90px;
+
+    padding-left: 20px;
+    background-color: #363636;
+
+    p {
+      @include font($weight: 600, $size: 20px);
+      line-height: 24px;
+      color: $color-green;
+
+      span {
+        @include font($weight: 400, $size: 24px);
+        line-height: 32px;
+        color: $color-orange;
+      }
+    }
+
+    @include for-tablet {
+      width: 170px;
+      height: 90px;
+
+      padding-left: 20px;
+    }
+
+    @include for-phone-only {
+      width: 200px;
+      height: 60px;
+
+      margin: 10px 0;
+
+      padding-left: 20px;
+    }
+  }
+
+  @include for-phone-only {
+    @include flexbox($display: flex, $direction: column);
+    width: 350px;
+  }
+}
+
+.sponsors {
+  @include flexbox($display: flex, $placeItems: center, $placeContent: center);
+
+  position: relative;
+
+  width: 255px;
+  height: 90px;
+
+  padding-left: 20px;
+  margin: 10px 0 0;
+  background-color: #363636;
+
+  p {
+    @include font($weight: 600, $size: 20px);
+    line-height: 24px;
+    color: $color-green;
+  }
+
+  &::before {
+    content: url("/assets/pepapng.png");
+    position: absolute;
+    top: 15px;
+    left: 30px;
+
+    @include for-tablet {
+      top: 15px;
+      left: 10px;
+    }
+  }
+
+  @include for-tablet {
+    width: 170px;
+    height: 90px;
+
+    padding-left: 50px;
+    margin: 10px 0 0;
+  }
+}
+
+//// for JS modal
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 40%;
+
+  width: 650px;
+  min-height: 330px;
+
+  padding: 15px;
+
+  border: 1px solid black;
+  background-color: $color-darkgrey;
+  box-shadow: 0px 0px 18px rgb(146 146 146 / 21%);
+  border-radius: 5px;
+
+  transition: 200ms ease-in-out;
+  z-index: 2;
+
+  &__closeButton {
+    align-self: flex-end;
+
+    font-size: 25px;
+    line-height: 5px;
+
+    width: 35px;
+    height: 35px;
+
+    color: $color-green;
+    background-color: rgb(76, 68, 68);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      font-size: 30px;
+      line-height: 1px;
+    }
+  }
+
+  &__inputs {
+    @include flexbox(
+      $display: flex,
+      $direction: column,
+      $justifyContent: space-between
+    );
+
+    height: 220px;
+
+    input {
+      max-width: 270px;
+      min-height: 50px;
+      background-color: $color-white;
+
+      @include for-phone-only {
+        margin: 5px;
+        width: 350px;
+      }
+    }
+
+    textarea {
+      @include for-phone-only {
+        margin: 5px;
+        width: 270px;
+        padding: 30px 0;
+      }
+    }
+  }
+
+  &.active {
+    @include flexbox($display: flex, $direction: column);
+  }
+
+  @include for-tablet {
+    top: 40%;
+    left: 5%;
+
+    width: 450px;
+    min-height: 330px;
+  }
+
+  @include for-phone-only {
+    top: 25%;
+    left: 5%;
+
+    width: 350px;
+    min-height: 330px;
+  }
+
+  @media (max-width: 1600px) {
+    top: 50%;
+    left: 35%;
+  }
+}
+
+.submitBtn {
+  margin: 10px 0;
+
+  background-color: #00b285;
+
+  @include for-phone-only {
+    width: 300px;
+  }
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}

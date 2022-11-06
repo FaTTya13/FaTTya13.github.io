@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="/js/modal.js"></script>
+    <script defer src="/js/dropdown.js"></script>
+    <script defer src="/js/accordion.js"></script>
+    <script defer src="/js/submit.js"></script>
+    <title>Турнир Tarkov.Help</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__description description">
+          <span>Одиночные квалификации на турнир</span>
+          <h1>Турнир Tarkov.Help</h1>
+          <p>Охота на новичков Одиночки</p>
+          <button
+            class="description__button"
+            type="button"
+            data-modal-target="#modal"
+          >
+            Записаться на турнир
+          </button>
+        </div>
+        <div class="header__image">
+          <picture>
+            <source media="(max-width: 1200px)" srcset="/assets/eftmin.png" />
+            <source
+              media="(max-width: 400px)"
+              srcset="/assets/eft_mobile.png"
+            />
+            <img class="image" alt="military forces" src="/assets/eft.png" />
+          </picture>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__container container">
+        <div class="content__list">
+          <h2 class="content__description">Правила проведения турнира</h2>
+          <ul class="list">
+            <li class="list__item item">
+              <span class="item__header">Цель участников турнира:</span>
+              <p class="item__content">
+                Игроки за 3 часа игры на локации Таможня, должны как можно
+                больше раз выжить в рейдах и уничтожить как можно больше игроков
+                на карте за один рейд. Турнир основан на PVP механике и удаче в
+                нахождении игроков низкого уровня персонажа.
+              </p>
+            </li>
+            <li class="list__item item">
+              <span class="item__header">Снаряжение:</span>
+              <p class="item__content">
+                Любое снаряжение на любую сумму денег с основного аккаунта
+                игрока.
+              </p>
+            </li>
+            <li class="list__item item">
+              <span class="item__header">Получение очков:</span>
+              <p class="item__content">Убийства ЧВК с жетоном за один рейд:</p>
+              <ul class="points__list">
+                <li class="points__item">
+                  1 убийство с жетоном - <span>1 очко</span>
+                </li>
+                <li class="points__item">
+                  2 убийства с жетоном - <span>4 очка</span>
+                </li>
+                <li class="points__item">
+                  3 убийства с жетоном - <span>8 очков</span>
+                </li>
+                <li class="points__item">
+                  4 убийства с жетоном - <span>16 очков</span>
+                </li>
+                <li class="points__item">
+                  5+ убийств с жетоном -
+                  <span>за каждого ЧВК по 5 очков</span>
+                </li>
+                <li class="points__item">
+                  Extra: убийтсво оружием ближнего боя - <span>20 очков</span>
+                </li>
+              </ul>
+              <p class="item__content item__content--darkgrey">
+                *(Если уровень убитого ЧВК не превышает или равен 20, то
+                дополнительно дается 4 очка за каждого)
+              </p>
+              <p class="item__content item__content--darkgrey">
+                *(Учитываются очки только в рейдах, где участник выжил в рейде,
+                обязательно нужно собирать жетоны, иначе очки за убийство не
+                будут засчитаны)
+              </p>
+            </li>
+            <li class="list__item item">
+              <span class="item__header">Правила подачи заявки:</span>
+              <p class="item__content">Заявка должна включать в себя:</p>
+              <ul class="points__list">
+                <li class="points__item points__item--darkgrey">
+                  - двухчасовой стрим на платформе Twitch с названием:
+                  <span>Tarkov Help заявка</span>
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - ссылка на запись двухчасового стрима
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - с самого начала стрима нужно показать статистику вашего
+                  персонажа по убийствам чвк, после уже начинать рейды на
+                  локации Таможня
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - всегда показывать список убийств в конце рейда, не скрывать
+                  экран чем-либо
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - по окончанию двух часов показать статистику персонажа по
+                  убийством чвк
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - количество участников в турнире: 10 человек
+                </li>
+              </ul>
+            </li>
+            <li class="list__item item">
+              <span class="item__header"
+                >Минимальные требования к участнику:</span
+              >
+              <ul class="points__list">
+                <li class="points__item points__item--darkgrey">
+                  - аккаунт на твиче, не важно партнер или нет
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - 18 лет или более
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - качество стрима для заявки 720p и выше
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - умение говорить хорошо на русском языке
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - не нарушать правила платформы Twitch
+                </li>
+                <li class="points__item points__item--darkgrey">
+                  - жить в регионах России
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <aside class="aside">
+          <div class="aside__timestampInfo">
+            <p>Время проведения турнира</p>
+            <p>Прием заявок: 12-20 апреля</p>
+            <p>Проведение турнира: 23 апреля</p>
+          </div>
+          <div class="aside__locationInfo">
+            <p>Локация:</p>
+            <span>Таможня</span>
+          </div>
+          <button
+            class="aside__button"
+            type="button"
+            data-modal-target="#modal"
+          >
+            Записаться на турнир
+          </button>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="item">
+          <span class="item__header">Награда победителям</span>
+          <div class="winners__list">
+            <div class="winners__place">
+              <p>1 место <br /><span>25 000 ₽</span></p>
+            </div>
+            <div class="winners__place">
+              <p>2 место<br /><span>14 000 ₽</span></p>
+            </div>
+            <div class="winners__place">
+              <p>3 место<br /><span>8 000 ₽</span></p>
+            </div>
+            <div class="winners__place">
+              <p>4 место<br /><span>3 000 ₽</span></p>
+            </div>
+          </div>
+          <div class="extraPrices">
+            <div class="extraPrices__title">
+              <p>+ дополнительные секретные призы победителям</p>
+            </div>
+            <div class="extraPrices__content">
+              <div class="content">
+                <div class="content__title">Секретный приз - 1</div>
+                <div class="content__text">10$</div>
+              </div>
+              <div class="content">
+                <div class="content__title">Секретный приз - 2</div>
+                <div class="content__text">5$</div>
+              </div>
+              <div class="content">
+                <div class="content__title">Секретный приз - 3</div>
+                <div class="content__text">1$</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list__item item">
+          <span class="item__header">Спонсоры турнира</span>
+          <div class="sponsors">
+            <p>pep1ch</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal" id="modal">
+      <button data-close-button class="modal__closeButton">&times;</button>
+      <form action="">
+        <div class="modal__inputs">
+          <input
+            name="email"
+            type="email"
+            id="email"
+            required
+            placeholder="Type your Email"
+          />
+          <input
+            name="nickName"
+            type="text"
+            id="nickName"
+            required
+            placeholder="Type your Twitch Nickname"
+          />
+          <textarea
+            name="comment"
+            id="comment"
+            cols="30"
+            rows="5"
+            placeholder="Leave your comment here..."
+          ></textarea>
+        </div>
+        <button class="submitBtn" type="submit">Отправить</button>
+      </form>
+    </div>
+    <div id="overlay"></div>
+  </body>
+</html>
